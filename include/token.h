@@ -1,6 +1,7 @@
 #ifndef TOKEN_H
 #define TOKEN_H
 
+#include <stddef.h>
 typedef enum {
   TOKEN_KEYWORD_FUNC,
   TOKEN_IDENTIFIER,
@@ -23,5 +24,17 @@ typedef struct {
     int int_value;
   } value;
 } Token;
+
+typedef struct {
+  const char *source;
+  size_t position;
+  size_t length;
+} Tokenizer;
+
+void tokenizer_init(Tokenizer *t, const char *source);
+
+char tokenizer_peek(Tokenizer *t);
+
+char tokenizer_advance(Tokenizer *t);
 
 #endif

@@ -14,7 +14,7 @@ ASM_FILE = output.s
 OUTPUT = $(BUILD_DIR)/output
 
 all: $(BUILD_DIR)
-	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) $(SOURCES) -o $(COMPILER)
+	$(CC) $(CFLAGS) $(SOURCES) -o $(COMPILER)
 	@echo "Compiler built successfully at $(COMPILER)"
 
 $(BUILD_DIR):
